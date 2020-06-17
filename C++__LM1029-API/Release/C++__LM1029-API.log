@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  dllmain.cpp
+    正在创建库 D:\Porjects\LM1029-API\Release\C++__LM1029-API.lib 和对象 D:\Porjects\LM1029-API\Release\C++__LM1029-API.exp
+  正在生成代码
+  All 182 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  C++__LM1029-API.vcxproj -> D:\Porjects\LM1029-API\Release\C++__LM1029-API.dll
+  C++__LM1029-API.vcxproj -> D:\Porjects\LM1029-API\Release\C++__LM1029-API.pdb (Full PDB)

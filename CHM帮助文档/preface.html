@@ -1,0 +1,91 @@
+<!--前言.html-->
+<div id="preface" style="color: #cfcfcf; text-align: justify; font-size: 14px; font-family: Verdana, Helvetica, Arial, sans-serif; padding: 0.5em 1em;">
+    <div style="text-align: center; border-radius: 1em 1em 0 0; width: 100%; background: rgb(0,0,0);">
+        <img class="center" src="img/banner.png" />
+    </div>
+    <div>
+        欢迎使用
+        <a class="API">LiMoWindowsSystem_API </a>
+        开发文档！本文档分为三个部分，目的是让你熟悉 <a class="API">LiMoWindowsSystem_API</a>
+        基本函数和每一个函数的工作流程原理，然后是示例用法。若您存有开发上的疑问或是提供API改善意见，请跳转到
+        <a href="#about" onclick="UpdatePage('about/index.html','#main')">关于页</a>
+        以便联系我~
+    </div>
+    <br />
+    <div class="note">
+        <b>注意： 由于 <a class="API">LiMoWindowsSystem_API</a> 的系统敏感性质，也有一些不包括在手册之内，特别是那些<a class="stress">底层汇编原理</a>以及涉及<a
+                class="stress">WinRing0</a>的内容<a style="color: rgb(255,78,78);">（如此标红字体）。</a>关于<a
+                class="stress">底层汇编原理</a>以及涉及<a class="stress">WinRing0</a>等敏感内容的提示，本文档不再叙述，若有相关疑问，请资讯<a href="#about"
+                onclick="UpdatePage('about/index.html', '#main')">开发者本人</a>。</b>
+    </div>
+    <p><br /></p>
+    <p><a name="started" id="started"></a></p>
+    <h2>迈向轻便的大门</h2>
+    <p>这一章节是 <a class="API">LiMoWindowsSystem_API</a> 使用的必经之站，将带领你开启 <a class="API">LiMoWindowsSystem_API</a> 的大门。你会发现，
+        <a class="API">LiMoWindowsSystem_API</a> 将减轻开发工作时的大量负担，加快开发进度。一旦你掌握基本的调用知识，你便可以再深入看看 <a
+            class="API">LiMoWindowsSystem_API</a> 的各个函数，它们 在下面的 <a href="#baseHandler">基本函数</a> 部分。</p>
+    <blockquote>
+        <label class="pulldown" for="one_one">部署</label>
+        <input id="one_one" type="checkbox">
+        <div>
+            <ol>
+                <li><a href="#download"><span class="listLink">下载</span></a></li>
+                <li><a href="#update"><span class="listLink">更新</span></a></li>
+                <li><a href="#input"><span class="listLink">导入项目</span></a></li>
+                <li><a href="#empower"><span class="listLink">授权</span></a></li>
+                <li><a href="#compatible"><span class="listLink">兼容性</span></a></li>
+            </ol>
+        </div>
+        <br />
+    </blockquote>
+    <p><br /></p>
+    <p><a name="baseHandler" id="baseHandler"></a></p>
+    <h2>基本函数</h2>
+    <P><a class="API">LiMoWindowsSystem_API</a> 的
+        dll（动态链接库）集成了许多功能函数，若想要充分发挥出此API的最大能力，有一些基本API函数是必须所熟知的，高级函数属可选范围内，您也可以参阅 <a href="#allHandler">完整函数</a>
+        进行学习。（请注意这些高级函数的可用性取决于当前使用的 <a class="API">LiMoWindowsSystem_API</a> 版本）</P>
+    <blockquote>
+        <label class="pulldown" for="two_one">系统操作</label>
+        <input id="two_one" type="checkbox">
+        <div>
+            <ol>
+                <li><a href="#getOsVersion" onclick="UpdatePage('system/getOsVersion.html', '#main')"><span class="listLink">获取系统版本</span></a></li>
+                <li><a href="#getSystemInfo"><span class="listLink">获取系统基本信息</span></a></li>
+                <li><a href="#getHardware"><span class="listLink">获取硬件配置</span></a></li>
+                <li><a href="#setSystem"><span class="listLink">自定义系统配置</span></a></li>
+                <li><a href="#getTempAndHz"><span class="listLink highSensitive">获取硬件温度&运行频率</span></a></li>
+            </ol>
+        </div>
+        <br />
+    </blockquote>
+    <p><br /></p>
+    <p><a name="baseHandler" id="baseHandler"></a></p>
+    <h2>实用工具（解决方案）</h2>
+    <P>在多语言调用dll时，可能会出现各种不一样的问题，针对这些问题，我们提供以下实用工具（解决方案），以便于使用者节约开发时间！</P>
+    <blockquote>
+        <label class="pulldown" for="three_one">C#</label>
+        <input id="three_one" type="checkbox">
+        <div>
+            <ol>
+                <li><a href="#CS_C->struct"><span class="listLink">托管平台与非托管平台结构体传递问题</span></a></li>
+            </ol>
+        </div>
+        <br />
+        <label class="pulldown" for="three_two">C++</label>
+        <input id="three_two" type="checkbox">
+        <div>
+            <ol>
+                <li><a href="#"><span class="listLink"></span></a></li>
+            </ol>
+        </div>
+        <br />
+    </blockquote>
+<!--     <code class="sundry">
+        <span class="keyword">using</span>&nbsp;<span class="class">System</span>;<br />
+        <span class="keyword">using</span>&nbsp;<span class="class">System</span>.<span class="class">Collections</span>.<span class="class">Generic</span>;<br />
+        <span class="keyword">using</span>&nbsp;<span class="class">System</span>.<span class="class">Linq</span>;<br />
+        <span class="keyword">using</span>&nbsp;<span class="class">System</span>.<span class="class">Runtime</span>.<span class="class">InteropServices</span>;<br />
+        <span class="keyword">using</span>&nbsp;<span class="class">System</span>.<span class="class">Text</span>;<br />
+        <span class="keyword">using</span>&nbsp;<span class="class">System</span>.<span class="class">Threading</span>.<span class="class">Tasks</span>;<br />
+    </code> -->
+</div>

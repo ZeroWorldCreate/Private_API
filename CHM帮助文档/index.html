@@ -1,0 +1,241 @@
+<!--框架.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>框架</title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/code.css">
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #ffffff;
+    }
+
+    a {
+        font-weight: bold;
+        color: #04de80;
+    }
+
+    .note {
+        font-style: italic;
+        font-size: 12px;
+        margin-left: 40px;
+        margin-right: auto;
+    }
+
+    .note p{
+        margin-left: 15px;
+    }
+
+    img.center{
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2{
+        margin: 0 0 0 0;
+        font-size: 1.5em;
+        padding: 0 0 0 0.5em;
+        line-height: 40px;
+        font-weight: bold;
+        background-image: url(img/Header_Bar_Front.png), url(img/Header_Bar_Back.gif);
+        background-position: left, left;
+        background-repeat: no-repeat, repeat;
+        border-radius: 0.5em 0.5em 0 0;
+        color: #ffffff;
+    }
+
+    ::-webkit-scrollbar {
+        width: 14px;
+        height: 14px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        background-color: #282828;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #282828;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        border-style: solid;
+        border-width: 4px;
+        border-color: #000000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #444444;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #000000;
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background-color: #039e5c;
+    }
+
+    .API{
+        color: lightskyblue;
+    }
+
+    .stress{
+        color: lightcoral;
+    }
+
+    blockquote{
+        background: #282828;
+        margin: 0;
+        padding: 1em 3em;
+    }
+
+    label{
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 0.25em 0.25em 0.25em 0.5em;
+        background: #444444;
+        color: #cfcfcf;
+        border-radius: 0.5em;
+    }
+
+    label.pulldown{
+        display: block;
+        background-image: url(img/Pointer_Closed.png);
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        padding-left: 35px;
+    }
+
+    label.pulldown:hover{
+        background: rgb(3,158,92);
+    }
+
+    label.pulldown + input{
+        display: none;
+    }
+
+    label.pulldown + input + *{
+        display: none;
+    }
+
+    label.pulldown + input:checked + *{
+        display: block;
+    }
+
+    ol{
+        list-style-type: circle;
+        list-style-image: url(img/Main_List_Icon.png);
+        line-height: 1.5em;
+    }
+
+    span.listLink{
+        color: #cfcfcf;
+    }
+
+    span.listLink:hover{
+        color: #ffffff;
+    }
+
+    span.highSensitive{
+        color: rgb(255, 78, 78);
+    }
+
+    h3.title{
+        display: inline;
+        margin-left: 20px;
+        padding: 0.25em 0.5em 0.5em;
+        font-size: 1em;
+        font-weight: bold;
+        background: #181818;
+        border-radius: 10px;
+        border: 2px solid #282828;
+    }
+
+    p.code{
+        margin: 0;
+        font-family: monospace;
+        background: #181818;
+        color: #cfcfcf;
+        padding: 20px 20px 20px 20px;
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: left;
+        border-radius: 10px;
+    }
+
+    table{
+        border: 0px;
+        border-collapse: separate;
+        border-spacing: 0px;
+        border-radius: 5px;
+        border: solid #026b3e 2px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    tr{
+        border: solid #039e5c 1px;
+        border-spacing: 2px;
+        background: #555555;
+    }
+
+    th{
+        color: #efefef;
+        background: #039e5c;
+    }
+
+    td{
+        border-spacing: 2px;
+        border: solid #333333 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+</style>
+<script>
+    $(document).ready(function () {
+        UpdatePage("preface.html", '#main');
+    });
+    function UpdatePage(url, id) {
+        $.ajax({
+            url: url,
+            success: function (data) {
+                $(id).html(data);
+            }
+        });
+    };
+</script>
+
+<body style="background-color: rgb(40,40,40); padding: 0px 0px; margin: 0; overflow: hidden;">
+    <div id="head" style="background-color: rgb(3,158,92); width: 100%; height: 30px;">
+        <div>
+            <a href="https://space.bilibili.com/153469871"><img src="img/home.png"
+                    style="width: 23px; height: 21px; position: absolute; margin: 4px;" /></a>
+            <a
+                style="font-size: 16px; font-weight: bold; color: white; position: absolute; top: 4px; left: 50px;">LiMoWindowsSystem_API</a>
+        </div>
+    </div>
+    <div id="main" style="width: 100%; position: absolute; bottom: 70px; top: 35px; overflow-y: auto; color: #cfcfcf;;">
+
+    </div>
+    <div id="footer" style="position: absolute; bottom: 0px; width: 100%;">
+        <div style="background: rgb(68,68,68); width: 100%; height: 40px; border-radius: 0.5em 0.5em 0 0;"></div>
+        <h3
+            style="background: rgb(3,158,92); border-radius: 0 0 1em 1em; margin: 0; text-align: center; font-size: 16px;">
+            &copy;CopyRight limo1029</h3>
+    </div>
+</body>
+
+</html>

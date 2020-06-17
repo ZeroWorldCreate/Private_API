@@ -1,0 +1,31 @@
+span.keyword{
+    color: rgb(197,134,192);
+}
+
+span.class{
+    color: rgb(78,201,176);
+}
+
+span.codenote{
+    color: rgb(106,153,85);
+}
+
+span.string{
+    color: rgb(206,145,120);
+}
+
+span.function{
+    color: rgb(220,220,170);
+}
+
+span.number{
+    color: rgb(181,206,168);
+}
+
+span.value{
+    color: rgb(149,209,241);
+}
+
+code.sundry{
+    color: rgb(212,212,212);
+}

@@ -1,0 +1,96 @@
+<!--获取系统版本.html-->
+<div id="getOsVersion">
+    <h2>获取系统版本-GetOsVersion()</h2>
+    <div>
+        <p><br /></p>
+        <h3 class="title">描述：</h3>
+        <div class="note">
+            <p>获取Windows版本号，自动区分Server端和Client端</p>
+        </div>
+        <p><br /></p>
+        <h3 class="title">语法：</h3>
+        <p class="code">
+            <code class="sundry">
+                <span class="function">GetOsVersion()</span>
+            </code>
+        </p>
+        <p><br /></p>
+        <h3 class="title">返回：</h3>
+        <p class="code">
+            <code class="sundry">
+                <span>布尔值；struct结构体</span>
+            </code>
+        </p>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>变量名</th>
+                        <th>解释</th>
+                        <th>数据类型</th>
+                    </tr>
+                    <tr>
+                        <td>return</td>
+                        <td>函数返回值</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>LastError</td>
+                        <td>错误代码，等同于GetLastError()</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>ErrorWhy</td>
+                        <td>自定义错误码</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>OsVersion</td>
+                        <td>系统版本号</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>BuildNumber</td>
+                        <td>OS内部版本号</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>OsName</td>
+                        <td>OS名称</td>
+                        <td>char[40]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p><br /></p>
+        <h3 class="title">示例：</h3>
+        <p class="code">
+            <code class="sundry">
+                [<span class="class">StructLayoutAttribute</span>(<span class="value">LayoutKind</span>.<span class="value">Sequential</span>)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="codenote">// 结构体顺序定义</span><br />
+                <span class="keyword">public</span> <span class="keyword">struct</span> <span class="class">OS</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="codenote">// 定义struct结构体，命名为"OS"</span><br />
+                {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">int</span> <span class="value">LastError</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">int</span> <span class="value">ErrorWhy</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">int</span> <span class="value">OsVersion</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">int</span> <span class="value">BuildNumber</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[<span class="class">MarshalAs</span>(<span class="value">UnmanagedType</span>.<span class="value">ByValArray</span>, <span class="value">SizeConst</span> = <span class="number">40</span>)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="codenote">// 定义数据结构与大小</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">char</span>[] <span class="value">OsName</span>;<br />
+                }<br />
+                <br />
+                [<span class="class">DllImport</span>(<span class="string">"dll.dll"</span>, <span class="value">EntryPoint</span> = <span class="string">"GetOsInfo"</span>)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="codenote">// 导入名为“dll.dll”中的“GetOsInfo”方法（函数）</span><br />
+                <span class="keyword">extern static int </span><span class="function">GetOsInfo</span>(<span class="keyword">ref</span><span class="class"> OS </span><span class="value">oS</span>);&nbsp;&nbsp;&nbsp;&nbsp;<span class="codenote">// 定义导入函数使用方法</span><br />
+                <span class="key word">static void </span><span class="function">Main</span>()&nbsp;&nbsp;&nbsp;&nbsp;<span class="codenote">// 函数入口点</span><br />
+                {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int </span><span class="value">state</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="class">OS </span><span class="value">oS</span> = <span class="keyword">new </span><span class="class">OS</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">OsName</span> = <span class="keyword">mew char</span>[<span class="number">40</span>]<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;};<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">state</span> = <span class="function">GetOsInfo</span>(<span class="keyword">ref </span><span class="value">oS</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">Console</span>.<span class="function">WriteLine</span>(<span class="value">state</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">Console</span>.<span class="function">WriteLine</span>(<span class="value">oS</span>);<br />
+                }<br />
+            </code>
+        </p>
+    </div>
+</div>
